@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nur Santika Hasanah — Perkenalan Diri</title>
+<style>
+  :root{
+    --off-white:#F9F8F6;
+    --cream:#EFE9E3;
+    --taupe:#D9CFC7;
+    --beige:#C9B59C;
+    --coklat:#5A493C;
+    --teks:#332B26;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth; scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{
+    background:var(--off-white);
+    color:var(--teks);
+    font-family:'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    line-height:1.6;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+    overflow-x:hidden;
+  }
+  a{text-decoration:none; color:inherit;}
+  section{padding:110px 8vw; max-width:1280px; margin:0 auto; position:relative;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:100vh;
+    padding-top:calc(60px + env(safe-area-inset-top,0px));
+    display:flex; align-items:center;
+  }
+  .hero-inner{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:60px;
+    align-items:center;
+    width:100%;
+  }
+  .hero-text .eyebrow{
+    font-size:16px; color:var(--coklat); font-weight:600; margin-bottom:18px;
+  }
+  .hero-text h1{
+    font-size:clamp(40px, 5.6vw, 72px);
+    font-weight:700;
+    line-height:1.08;
+    letter-spacing:-0.01em;
+  }
+  .hero-text h1 .accent{color:var(--coklat); font-weight:800;}
+  .hero-text .tagline{
+    font-style:italic;
+    font-size:clamp(17px, 2vw, 21px);
+    color:var(--teks);
+    opacity:0.78;
+    margin-top:26px;
+    max-width:480px;
+  }
+  .hero-buttons{display:flex; gap:16px; margin-top:42px; flex-wrap:wrap;}
+  .btn{
+    padding:14px 30px;
+    border-radius:999px;
+    font-size:15px;
+    font-weight:600;
+    transition:transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+    display:inline-block;
+  }
+  .btn-primary{background:var(--coklat); color:var(--off-white);}
+  .btn-primary:hover{transform:translateY(-2px); background:#473b30;}
+  .btn-outline{border:1.5px solid var(--coklat); color:var(--coklat);}
+  .btn-outline:hover{transform:translateY(-2px); background:var(--coklat); color:var(--off-white);}
+
+  .hero-photo-wrap{display:flex; justify-content:center;}
+  .hero-photo{
+    width:100%;
+    max-width:380px;
+    aspect-ratio:3/4;
+    border-radius:10%;
+    overflow:hidden;
+    background:var(--cream);
+    box-shadow:0 30px 60px -20px rgba(90,73,60,0.35);
+    position:relative;
+  }
+  .hero-photo img{
+    width:100%; height:100%; object-fit:cover; object-position:50% 75%;
+    transform:scale(1.1); display:block;
+  }
+  .hero-photo::after{
+    content:"";
+    position:absolute; inset:0;
+    border-radius:10%;
+    border:1.5px solid rgba(90,73,60,0.15);
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about{background:var(--cream);}
+  .about-inner{max-width:760px; margin:0 auto; text-align:left;}
+  .section-title{
+    font-size:clamp(30px, 4vw, 46px);
+    font-weight:700;
+    margin-bottom:38px;
+    letter-spacing:-0.01em;
+  }
+  .about p{font-size:17px; margin-bottom:20px; max-width:65ch;}
+  .about blockquote{
+    margin-top:38px;
+    padding:28px 32px;
+    border-left:3px solid var(--coklat);
+    background:var(--off-white);
+    border-radius:4px;
+    font-style:italic;
+    font-size:17px;
+    color:var(--coklat);
+  }
+
+  /* ---------- ROLES ---------- */
+  .roles-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+    margin-top:50px;
+  }
+  .role-card{
+    background:var(--cream);
+    border-radius:16px;
+    padding:36px 28px;
+    transition:transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .role-card:hover{transform:translateY(-6px); box-shadow:0 20px 40px -24px rgba(90,73,60,0.4);}
+  .role-card .tag{
+    font-size:13px; font-weight:600; color:var(--coklat);
+    letter-spacing:0.02em; margin-bottom:14px; display:block;
+  }
+  .role-card h3{font-size:19px; font-weight:700; margin-bottom:14px;}
+  .role-card p{font-size:15px; opacity:0.85;}
+
+  /* ---------- PURPOSE ---------- */
+  .purpose{
+    background:var(--coklat);
+    color:var(--cream);
+  }
+  .purpose .section-title{color:var(--off-white);}
+  .purpose-inner{max-width:760px; margin:0 auto;}
+  .purpose-lead{
+    font-size:clamp(20px, 2.6vw, 26px);
+    font-style:italic;
+    line-height:1.5;
+    margin-bottom:30px;
+    color:var(--off-white);
+  }
+  .purpose p{font-size:17px; margin-bottom:26px; color:var(--cream); opacity:0.92;}
+  .purpose .closing{
+    font-weight:600;
+    font-size:18px;
+    color:var(--beige);
+  }
+
+  /* ---------- CONNECT ---------- */
+  .connect{text-align:center;}
+  .connect .section-title{margin-bottom:46px;}
+  .connect-links{
+    display:flex; justify-content:center; gap:20px; flex-wrap:wrap;
+  }
+  .connect-links a{
+    padding:16px 36px;
+    border:1.5px solid var(--coklat);
+    border-radius:999px;
+    font-size:15px;
+    font-weight:600;
+    color:var(--coklat);
+    transition:all 0.25s ease;
+  }
+  .connect-links a:hover{background:var(--coklat); color:var(--off-white); transform:translateY(-2px);}
+
+  footer{
+    padding:40px 8vw;
+    padding-bottom:calc(40px + env(safe-area-inset-bottom,0px));
+    display:flex; justify-content:space-between; align-items:center;
+    border-top:1px solid var(--taupe);
+    font-size:14px;
+    opacity:0.75;
+    flex-wrap:wrap; gap:12px;
+  }
+  footer a{font-weight:600; opacity:1;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:860px){
+    section{padding:80px 7vw;}
+    .hero-inner{grid-template-columns:1fr; gap:46px; text-align:left;}
+    .hero-photo-wrap{order:-1; justify-content:flex-start;}
+    .hero-photo{max-width:280px;}
+    .roles-grid{grid-template-columns:1fr;}
+    .nav-links{gap:16px; font-size:13px;}
+    .nav-name{font-size:15px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1>Hi, I'm <span class="accent">Nur</span> Santika Hasanah!</h1>
+      <p class="tagline">A Logistics Student Who Loves to Explore, Create, and Contribute.</p>
+      <div class="hero-buttons">
+        <a href="#about" class="btn btn-primary">About Me</a>
+        <a href="#contact" class="btn btn-outline">Contact</a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <div class="hero-photo">
+        <img src="foto.jpg" alt="Foto Nur Santika Hasanah">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-inner">
+    <h2 class="section-title">More Than Moving Things</h2>
+    <p>Halo! Aku Nur, mahasiswa Teknik Logistik yang percaya bahwa logistik bukan sekadar tentang barang, gudang, atau distribusi, tetapi juga tentang bagaimana sebuah sistem bisa bekerja untuk memberikan dampak yang lebih luas bagi manusia.</p>
+    <p>Aku senang mengeksplorasi hal baru, menggabungkan pemikiran sistematis dengan kreativitas, dan belajar melalui berbagai pengalaman. Bagiku, setiap proses adalah kesempatan untuk bertumbuh, memahami perspektif baru, dan menemukan cara untuk berkontribusi.</p>
+    <blockquote>"Logistics is not only about how things move, but also how systems can make a difference for people."</blockquote>
+  </div>
+</section>
+
+<section class="roles">
+  <h2 class="section-title">Different Roles, One Journey</h2>
+  <div class="roles-grid">
+    <div class="role-card">
+      <span class="tag">Humanitarian Logistics</span>
+      <h3>Kepala Divisi Logistik di JBZ</h3>
+      <p>Belajar menerapkan prinsip logistik dalam kegiatan kemanusiaan agar bantuan dapat disalurkan secara tepat dan efektif.</p>
+    </div>
+    <div class="role-card">
+      <span class="tag">Visual &amp; Communication</span>
+      <h3>Kominfo HMTL</h3>
+      <p>Menggabungkan desain visual dan komunikasi untuk menyampaikan informasi organisasi dengan cara yang menarik.</p>
+    </div>
+    <div class="role-card">
+      <span class="tag">Organization &amp; Finance</span>
+      <h3>Bendahara Umum BPO KM FPTI UPI</h3>
+      <p>Belajar mengelola keuangan dan administrasi organisasi secara tertata dan bertanggung jawab.</p>
+    </div>
+  </div>
+</section>
+
+<section class="purpose">
+  <div class="purpose-inner">
+    <h2 class="section-title">Moving Things, Moving Lives.</h2>
+    <p class="purpose-lead">"I hope to be part of a world where logistics is not only about moving things, but also about moving lives forward."</p>
+    <p>Aku ingin ikut membangun sistem logistik yang lebih berkelanjutan, inklusif, dan berdampak bagi manusia. Melalui inovasi, kegiatan kemanusiaan, kreativitas, dan kontribusi sehari-hari, aku ingin terus belajar dan menemukan caraku sendiri untuk membawa perubahan.</p>
+    <p class="closing">Still learning, still growing, and finding my own way to make a difference.</p>
+  </div>
+</section>
+
+<section class="connect" id="contact">
+  <h2 class="section-title">Let's Keep Learning.</h2>
+  <div class="connect-links">
+    <a href="https://www.linkedin.com/school/universitas-pendidikan-indonesia/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.instagram.com/upiofficial/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.upi.edu/" target="_blank" rel="noopener">Website</a>
+  </div>
+</section>
+
+<footer>
+  <span>&copy; Nur Santika Hasanah</span>
+  <a href="#top">Back to top</a>
+</footer>
+
+</body>
+</html>
